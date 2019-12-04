@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/Screens/SignUp.dart';
+import 'package:water/components/BottomNavigationBar.dart';
 
 
 class Login extends StatelessWidget {
@@ -174,6 +175,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       child: GestureDetector(
                         onTap: (){
+                          Navigator.push(context, new MaterialPageRoute(builder: (context) => bottomNavigationBar()));
 
                         },
                         child: Center(
