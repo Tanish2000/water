@@ -60,25 +60,31 @@ class _DashboardState extends State<Dashboard> {
                   ),
 
 
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          child: Text("suggest for You"),
-                        ),
-                        SizedBox(width: 180),
-                        Container(
-                          child: InkWell(
-                              onTap: (){
-                                Navigator.push(context, new MaterialPageRoute(builder: (context) => ViewAll()));
+                  ListTile(
+                    leading: Text("Suggested for you"),
 
-                              },
-                              child: Text("View All")),
-                        ),
-                      ],
-                    ),
+
+
+
+                    trailing: ClipRRect(
+                      borderRadius: new BorderRadius.circular(50.0),
+
+                      child: RaisedButton(
+
+                        child: const Text('View All',style: TextStyle(
+                          color: Colors.white
+                        ),),
+                        color: Theme.of(context).accentColor,
+                        elevation: 2.0,
+                        splashColor: Colors.blueGrey,
+                        onPressed: () {
+                          Navigator.push(context, new MaterialPageRoute(builder: (context) => ViewAll()));
+
+                        },
+                      ),
+                    )
                   ),
+
                   Container(
 
                       color: Color.fromRGBO(255, 255, 255, 100),
