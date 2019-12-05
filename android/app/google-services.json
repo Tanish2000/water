@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1012702052936",
+    "firebase_url": "https://water-77e7a.firebaseio.com",
+    "project_id": "water-77e7a",
+    "storage_bucket": "water-77e7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012702052936:android:840e914a03a07053a58e7d",
+        "android_client_info": {
+          "package_name": "water.water"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012702052936-cqm9kp8dp82mk5iq35vuccc1t67bcnpn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVVlQssMir32qFyW3MsUPR0T9zc4-knG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012702052936-cqm9kp8dp82mk5iq35vuccc1t67bcnpn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
