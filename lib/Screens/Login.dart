@@ -159,33 +159,35 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Spacer(),
 
-                    Container(
-                      height: 45,
-                      width: MediaQuery.of(context).size.width/1.2,
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Color(0xFF01579B),
-                              Color(0xFF03A9F4)
-                            ],
-                          ),
-                          borderRadius: BorderRadius.all(
-                              Radius.circular(50)
-                          )
-                      ),
-                      child: GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, new MaterialPageRoute(builder: (context) => bottomNavigationBar()));
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, new MaterialPageRoute(builder: (context) => bottomNavigationBar()));
 
-                        },
-                        child: Center(
-                          child: Text('Login'.toUpperCase(),
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold
+                      },
+                      child: Container(
+                        height: 45,
+                        width: MediaQuery.of(context).size.width/1.2,
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color(0xFF01579B),
+                                Color(0xFF03A9F4)
+                              ],
+                            ),
+                            borderRadius: BorderRadius.all(
+                                Radius.circular(50)
+                            )
+                        ),
+
+                          child: Center(
+                            child: Text('Login'.toUpperCase(),
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold
+                              ),
                             ),
                           ),
-                        ),
+
                       ),
                     ),
                   ],

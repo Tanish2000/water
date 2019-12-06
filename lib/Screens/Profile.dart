@@ -8,8 +8,18 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("profile"),
+    return Scaffold(
+
+
+      body: Column(
+        children: <Widget>[
+
+          Container(
+            child: Text("profile"),
+          )
+        ],
+      ),
+
 
     );
   }

@@ -26,7 +26,6 @@ class _HomePageState extends State<ViewAll> {
         itemCount: choices == null ? 0 : choices.length,
 
         itemBuilder: (BuildContext context, int index){
-          print("categoryyy");
           print(choices);
 
           return GestureDetector(
@@ -34,31 +33,37 @@ class _HomePageState extends State<ViewAll> {
               margin: EdgeInsets.all(10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
-                  border: Border.all(color: Colors.yellow)),
-              child: Card(
-                margin: EdgeInsets.all(0),
-                color: Color.fromRGBO(31, 0, 65, 100),
-                elevation: 8,
-                child: Column(children: <Widget>[
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Icon(
-                    Icons.graphic_eq,
-                    color: Colors.white,
-                    size: 70,
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "${choices[index].toString()}",
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                  border: Border.all(color: Colors.lightBlue)),
+              child: SingleChildScrollView(
+                child: Card(
+
+                  color: Colors.white,
+                  elevation: 8,
+                  child: Column(children: <Widget>[
+                    SizedBox(
+                      height: 30,
                     ),
-                  ),
-                ]),
+                    Tab(
+                      icon: Container(
+                        child: Image(
+                          image: AssetImage(
+                            'assets/4.png',
+                          ),
+//                          fit: BoxFit.cover,
+                        ),
+//                        height: 100,
+//                        width: 100,
+                      ),
+                    ),
+
+                    Text(
+//                        "${choices[index].toString()}",
+                          ("Water Bottle"),
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                      ),
+
+                  ]),
+                ),
               ),
             ),
           );
