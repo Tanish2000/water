@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:water/Screens/ViewAll.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 
 class Dashboard extends StatefulWidget {
@@ -9,6 +10,24 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  final _auth=FirebaseAuth.instance;
+  FirebaseUser loggedInUser;
+  @override
+  void initState() {
+    super.initState();
+    getCurrentUser();
+  }
+
+  void getCurrentUser()async{
+    try{
+      final user=await _auth.currentUser();
+      if(user!=null){
+        loggedInUser=user;
+      }
+    }catch(e){
+      print(e);
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,44 +68,31 @@ class _DashboardState extends State<Dashboard> {
                                     'http://yesofcorsa.com/wp-content/uploads/2018/01/Mineral-Water-Wallpaper-Full-HD.jpg'),
                               ],
                             ),
-                          )),
-
-
-
+                          )
+                      ),
                   ),
-
                   SizedBox(
                     height: 40,
                   ),
-
-
                   ListTile(
                     leading: Text("Suggested for you"),
-
-
-
-
                     trailing: ClipRRect(
                       borderRadius: new BorderRadius.circular(50.0),
-
                       child: RaisedButton(
-
                         child: const Text('View All',style: TextStyle(
                           color: Colors.white
-                        ),),
+                        ),
+                        ),
                         color: Theme.of(context).accentColor,
                         elevation: 2.0,
                         splashColor: Colors.blueGrey,
                         onPressed: () {
                           Navigator.push(context, new MaterialPageRoute(builder: (context) => ViewAll()));
-
                         },
                       ),
                     )
                   ),
-
                   Container(
-
                       color: Color.fromRGBO(255, 255, 255, 100),
                       padding: EdgeInsets.fromLTRB(0, 25, 0, 25),
                       height: 180.0,
