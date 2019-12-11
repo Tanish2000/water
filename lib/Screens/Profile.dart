@@ -66,6 +66,16 @@ class _ProfileState extends State<Profile> {
                     ),
 
 
+                    ListTile(
+                      leading: FlutterLogo(),
+                      title: Text('One-line with both widgets'),
+                      trailing: Icon(Icons.more_vert),
+                    )
+
+
+
+
+
                   ],
                 ))
           ],
