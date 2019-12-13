@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/Screens/ViewAll.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -15,7 +16,9 @@ class _CartState extends State<Cart> {
         actions: <Widget>[
           new IconButton(
             icon: new Icon(Icons.close),
-            onPressed: () => Navigator.of(context).pop(null),
+            onPressed: () => Navigator.push(context, new MaterialPageRoute(builder: (context) => ViewAll()))
+
+
           ),
         ],
         leading: new Container(),
