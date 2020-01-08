@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:water/Screens/ViewAll.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:water/Screens/inc.dart';
 
 
 class Dashboard extends StatefulWidget {
@@ -141,9 +142,6 @@ class _DashboardState extends State<Dashboard> {
 
               )
     );
-
-
-
 
 
   }

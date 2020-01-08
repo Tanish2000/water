@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:water/Screens/Login.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -36,7 +37,6 @@ class _ProfileState extends State<Profile> {
                         boxShadow: [
 //                              BoxShadow(blurRadius: 7.0, color: Colors.black)
                         ])),
-                SizedBox(height: 5.0),
                 Container(
                     height: 30.0,
                     width: 95.0,
@@ -56,7 +56,6 @@ class _ProfileState extends State<Profile> {
                         ),
                       ),
                     )),
-                SizedBox(height: 20),
                 Text(
                   'Girish',
                   style: TextStyle(
@@ -120,6 +119,7 @@ class _ProfileState extends State<Profile> {
                                         color: Colors.blueGrey,)),
 
                                 ),
+
                               ],
                             ),
                           ),
@@ -128,6 +128,15 @@ class _ProfileState extends State<Profile> {
                     ),
                   ),
                 ),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, new MaterialPageRoute(builder: (context) => Login()));
+
+                  },
+                  child: Container(
+                    child: Text("LOGOUT",style: TextStyle(fontWeight:FontWeight.bold,letterSpacing: 4,fontSize: 15)),
+                  ),
+                )
               ],
             ))
       ],
@@ -153,19 +162,3 @@ class getClipper extends CustomClipper<Path> {
   }
 }
 
-//
-//
-//title: Text(
-//"Introduction to Driving",
-//style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-//),
-//// subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
-//
-//subtitle: Row(
-//children: <Widget>[
-//Icon(Icons.linear_scale, color: Colors.yellowAccent),
-//Text(" Intermediate", style: TextStyle(color: Colors.white))
-//],
-//),
-//trailing:
-//Icon(Icons.keyboard_arrow_right, color: Colors.white, size: 30.0));
