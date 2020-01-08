@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter/material.dart';
-import 'package:water/Screens/inc.dart';
 
 int _n = 0;
 
