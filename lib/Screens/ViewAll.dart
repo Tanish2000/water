@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter/material.dart';
 
 int _n = 0;
@@ -27,20 +25,17 @@ class _HomePageState extends State<ViewAll> {
   Widget build(BuildContext context) {
     int columnCount = 2;
     return Scaffold(
-      body: AnimationLimiter(
-        child: GridView.count(
+      body: GridView.count(
           crossAxisCount: columnCount,
           children: List.generate(
             50,
             (int index) {
-              return AnimationConfiguration.staggeredGrid(
-                position: index,
-                duration: const Duration(milliseconds: 1000),
-                columnCount: columnCount,
-                child: ScaleAnimation(
+              return Container(
+
+                child: Container(
                   child: Column(
                     children: <Widget>[
-                      FadeInAnimation(
+                      Container(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
                           child: Column(
@@ -82,14 +77,16 @@ class _HomePageState extends State<ViewAll> {
                                 SizedBox(
                                   height: 30,
                                   width: 30,
-                                  child: new FloatingActionButton(
-                                    heroTag: "btn1",
-                                    onPressed: add,
-                                    child: new Icon(
-                                      Icons.add,
-                                      color: Colors.black,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    child: new RaisedButton(
+                                      onPressed: add,
+                                      child: new Icon(
+                                        Icons.add,
+                                        color: Colors.black,
+
+                                      ),
                                     ),
-                                    backgroundColor: Colors.white,
                                   ),
                                 ),
                                 Container(
@@ -110,20 +107,22 @@ class _HomePageState extends State<ViewAll> {
                                 SizedBox(
                                   height: 30,
                                   width: 30,
-                                  child: new FloatingActionButton(
-                                    heroTag: "btn2",
-                                    onPressed: minus,
-                                    child: new Icon(
-                                        const IconData(0xe15b,
-                                            fontFamily: 'MaterialIcons'),
-                                        color: Colors.black),
-                                    backgroundColor: Colors.white,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    child: new RaisedButton(
+                                      color: Colors.lightBlue[100],
+                                      onPressed: minus,
+                                     child: (
+                                           Icon(Icons.remove)
+                                     ),
+                                    ),
                                   ),
                                 ),
                               ],
-                            ),
+
                           ),
                         ),
+                        )
                       )
                     ],
                   ),
@@ -131,7 +130,6 @@ class _HomePageState extends State<ViewAll> {
               );
             },
           ),
-        ),
       ),
     );
   }

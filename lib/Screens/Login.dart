@@ -21,6 +21,18 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  bool _obscureText = true;
+
+  String _password;
+
+  void _toggle() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
+
+
   bool showSpinner=false;
   final _auth=FirebaseAuth.instance;
   String email;
@@ -68,11 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                             bottom: 32,
                             right: 32
                         ),
-                        child: InkWell(
-                          onTap: (){
-                            Navigator.push(context,new MaterialPageRoute(builder: (context)=>SignUp()));
-                          },
-                          child: Text('Register',
+                        child:  Text('Register',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 18
@@ -80,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                    ),
+
                   ],
                 ),
               ),
@@ -89,72 +97,68 @@ class _LoginPageState extends State<LoginPage> {
                 child: Container(
                   height: MediaQuery.of(context).size.height/2,
                   width: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.only(top: 62),
+                  padding: EdgeInsets.fromLTRB(30,40,30,0),
                   child: Column(
                     children: <Widget>[
-                      Container(
-                        width: MediaQuery.of(context).size.width/1.2,
-                        height: 45,
-                        padding: EdgeInsets.only(
-                            top: 4,left: 16, right: 16, bottom: 4
-                        ),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                                Radius.circular(50)
-                            ),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.black12,
-                                  blurRadius: 5
-                              )
-                            ]
-                        ),
-                        child: TextField(
-                          onChanged: (value){
-                            email=value;
-                          },
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            icon: Icon(Icons.email,
-                              color: Colors.grey,
-                            ),
-                            hintText: 'Email',
+                      Container(child: TextField(
+                        onChanged: (value){
+                          email=value;
+                        },
+                        style: TextStyle(color: Colors.black),
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(
+                            Icons.email,
+                            color: Colors.grey,
                           ),
-                        ),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width/1.2,
-                        height: 45,
-                        margin: EdgeInsets.only(top: 32),
-                        padding: EdgeInsets.only(
-                            top: 4,left: 16, right: 16, bottom: 4
-                        ),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                                Radius.circular(50)
-                            ),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.black12,
-                                  blurRadius: 5
-                              )
-                            ]
-                        ),
-                        child: TextField(
-                          onChanged: (value){
-                            password=value;
-                          },
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            icon: Icon(Icons.vpn_key,
-                              color: Colors.grey,
-                            ),
-                            hintText: 'Password',
+                          labelText: "Email",
+                          labelStyle: new TextStyle(color: Colors.black),
+                          enabledBorder: UnderlineInputBorder(
+                              borderSide: new BorderSide(color: Colors.grey)),
+                          hintStyle: new TextStyle(
+                            inherit: true,
+                            fontSize: 14.0,
+                            color: Colors.grey,
                           ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black)),
+
                         ),
-                      ),
+                      )),
+
+                      Container(child: TextField(
+                        obscureText: _obscureText,
+
+                        onChanged: (value){
+                          password=value;
+                        },
+                        style: TextStyle(color: Colors.black),
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(
+                            Icons.vpn_key,
+                            color: Colors.grey,
+                          ),
+                          labelText: "Password",
+                          suffixIcon: FlatButton(
+                              onPressed: _toggle,
+                              child: new Icon(Icons.remove_red_eye)),
+                          labelStyle: new TextStyle(color: Colors.black),
+                          enabledBorder: UnderlineInputBorder(
+                              borderSide: new BorderSide(color: Colors.grey)),
+                          hintStyle: new TextStyle(
+                            inherit: true,
+                            fontSize: 14.0,
+                            color: Colors.grey,
+
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black)),
+                        ),
+                      )),
+//
+
+
 
                       Align(
                         alignment: Alignment.centerRight,

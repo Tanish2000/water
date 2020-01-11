@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/Screens/Dashboard.dart';
-import 'package:water/Screens/Cart.dart';
 import 'package:water/Screens/Profile.dart';
+import 'package:water/Screens/Cart.dart';
 class bottomNavigationBar extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -12,7 +12,7 @@ class _BottomNavigationBarState extends State<bottomNavigationBar > {
   int _selectedPage = 0;
   final _pageOptions = [
     Dashboard(),
-    Cart(),
+    BottleList(),
     Profile()
   ];
   @override
