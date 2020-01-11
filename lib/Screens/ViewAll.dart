@@ -113,9 +113,7 @@ class _HomePageState extends State<ViewAll> {
                                   child: new FloatingActionButton(
                                     heroTag: "btn2",
                                     onPressed: minus,
-                                    child: new Icon(
-                                        const IconData(0xe15b,
-                                            fontFamily: 'MaterialIcons'),
+                                    child: new Icon(Icons.minimize,
                                         color: Colors.black),
                                     backgroundColor: Colors.white,
                                   ),

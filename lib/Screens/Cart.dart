@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water/Screens/ViewAll.dart';
+import 'package:water/payment.dart';
 
+String result = '';
 class Cart extends StatefulWidget {
   @override
   _CartState createState() => _CartState();
@@ -25,6 +27,7 @@ class _CartState extends State<Cart> {
       ),
 
       body: Column(
+
         children: <Widget>[
 
           Card(
@@ -136,11 +139,39 @@ class _CartState extends State<Cart> {
             ),
           ),
 
-
-
-
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0,100,0,0),
+              child: ClipRRect(
+                borderRadius: new BorderRadius.circular(5.0),
+                child: SizedBox(
+                  height: 10,
+                  width: 100,
+                  child: RaisedButton(
+                    child: Text("Place Order"),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(
+                          builder: (BuildContext _) => Payment()))
+                          .then((_) {
+                        setState(() {
+                          result = 'Payment Completed';
+                        });
+                      });
+//                  Navigator.push(context,new MaterialPageRoute(builder: (context)=>updateProfile()));
+                    },
+                    color: Colors.blueAccent,
+                    textColor: Colors.white,
+                    splashColor: Colors.grey,
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
+
       ),
+
 
 
     );
