@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:water/Screens/Profile.dart';
 import 'package:water/Screens/ViewAll.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'Cart.dart';
 
 
 class Dashboard extends StatefulWidget {
@@ -31,18 +33,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Water",style: TextStyle(color: Colors.black),),
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.info_outline,color: Colors.black,),
-          ),
-        ],
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        leading: Icon(Icons.menu,color: Colors.black),
-      ),
+
               body: Column(
                 children: <Widget>[
                   Container(
