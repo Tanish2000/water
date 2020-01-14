@@ -26,28 +26,28 @@ class _HomePageState extends State<ViewAll> {
     int columnCount = 2;
     return Scaffold(
       body: GridView.count(
-          crossAxisCount: columnCount,
-          children: List.generate(
-            50,
-            (int index) {
-              return Container(
+        crossAxisCount: columnCount,
+        children: List.generate(
+          7,
+              (int index) {
+            return Container(
 
-                child: Container(
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: 110,
+                child: Stack(
+                  children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: 170,
                                 width: 200,
                                 decoration: new BoxDecoration(
+                                    gradient: LinearGradient(
+                                        begin: Alignment.topRight,
+                                        end: Alignment.bottomLeft,
+                                        colors: [Colors.white,Colors.blue[100], Colors.blue]),
                                     boxShadow: [
                                       BoxShadow(
                                         color: Colors.blue,
-                                        blurRadius: 2.0,
+                                        blurRadius: 3.0,
                                       ),
                                     ],
                                     color: Colors.lightBlueAccent[200],
@@ -57,79 +57,24 @@ class _HomePageState extends State<ViewAll> {
                                       bottomLeft: const Radius.circular(10.0),
                                       bottomRight: const Radius.circular(10.0),
                                     )),
-                                child: GestureDetector(
-                                  child: Container(
-                                    child: Image.asset("assets/2.png"),
-                                  ),
-                                ),
+
+                                    child: Container(
+                                      child: Image.asset("assets/2.png"),
+                                    ),
                               ),
-                            ],
-                          ),
-                        ),
+                            ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(15,0,0,30),
+                      child: Container(
+                        alignment: Alignment.bottomLeft,
+                        child: Text("Nestle",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black),),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          child: new Center(
-                            child: new Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                SizedBox(
-                                  height: 30,
-                                  width: 30,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    child: new RaisedButton(
-                                      onPressed: add,
-                                      child: new Icon(
-                                        Icons.add,
-                                        color: Colors.black,
-
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 60,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                        color: Colors.blueAccent,
-                                        width: 3,
-                                      )),
-                                  child: Center(
-                                    child: new Text('$_n',
-                                        textAlign: TextAlign.center,
-                                        style: new TextStyle(fontSize: 20.0)),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 30,
-                                  width: 30,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    child: new RaisedButton(
-                                      color: Colors.lightBlue[100],
-                                      onPressed: minus,
-                                     child: (
-                                           Icon(Icons.remove)
-                                     ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-
-                          ),
-                        ),
-                        )
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
-              );
-            },
-          ),
+            );
+          },
+        ),
       ),
     );
   }

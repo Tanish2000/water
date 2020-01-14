@@ -69,7 +69,12 @@ class _LoginPageState extends State<LoginPage> {
                     Spacer(),
                     Align(
                       alignment: Alignment.center,
-                      child: Image.asset('assets/drop.png',width: 150,height: 150,),
+                      child: InkWell(
+                        onTap:(){
+                          Navigator.push(context, new MaterialPageRoute(builder: (context) => bottomNavigationBar()));
+
+                        } ,
+                          child: Image.asset('assets/drop.png',width: 150,height: 150,)),
                     ),
                     Spacer(),
 
@@ -142,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: "Password",
                           suffixIcon: FlatButton(
                               onPressed: _toggle,
-                              child: new Icon(Icons.remove_red_eye)),
+                              child: new Icon(Icons.remove_red_eye, color: Colors.black38,)),
                           labelStyle: new TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
                               borderSide: new BorderSide(color: Colors.grey)),
