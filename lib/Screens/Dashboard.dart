@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:water/Screens/ViewAll.dart';
@@ -32,18 +33,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Water",style: TextStyle(color: Colors.black),),
-          actions: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(Icons.info_outline,color: Colors.black,),
-            ),
-          ],
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-          leading: Icon(Icons.menu,color: Colors.black),
-        ),
+
         body: SingleChildScrollView(
           child: Column(
 
@@ -79,7 +69,9 @@ class _DashboardState extends State<Dashboard> {
                 height: 40,
               ),
               ListTile(
-                  leading: Text("Suggested for you"),
+                  leading: Text("Suggested for you",style: TextStyle(
+                    fontWeight: FontWeight.bold
+                  )),
                   trailing: ClipRRect(
                     borderRadius: new BorderRadius.circular(50.0),
                     child: RaisedButton(
@@ -147,7 +139,7 @@ class _DashboardState extends State<Dashboard> {
                     ],
                   )),
               Container(
-                height: 300,
+                height: 400,
                 width: 400,
                 child: Cards(),
               )
@@ -161,6 +153,3 @@ class _DashboardState extends State<Dashboard> {
 
   }
 }
-
-
-
