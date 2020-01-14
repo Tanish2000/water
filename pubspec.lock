@@ -109,6 +109,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_webview_plugin:
+    dependency: "direct main"
+    description:
+      name: flutter_webview_plugin
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.1+2"
   image:
     dependency: transitive
     description:
@@ -144,6 +151,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.6.4"
+  paytm:
+    dependency: "direct main"
+    description:
+      name: paytm
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   pedantic:
     dependency: transitive
     description:

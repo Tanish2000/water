@@ -1,8 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-
-
 class BottleList extends StatefulWidget {
   BottleList({Key key}) : super(key: key);
 
