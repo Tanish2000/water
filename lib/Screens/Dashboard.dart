@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:water/Screens/ViewAll.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:water/components/Cards.dart';
 
@@ -32,6 +33,7 @@ class _DashboardState extends State<Dashboard> {
   }
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
 
         body: SingleChildScrollView(
