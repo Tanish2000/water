@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:water/Screens/PatmentScreen.dart';
 import 'package:water/Screens/ViewAll.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:water/components/Cards.dart';
@@ -101,7 +102,7 @@ class _DashboardState extends State<Dashboard> {
 
                       InkWell(
                         onTap: (){
-                          Navigator.push(context, new MaterialPageRoute(builder: (context) => ViewAll()));
+                          Navigator.push(context, new MaterialPageRoute(builder: (context) => PaymenScreen()));
 
                         },
                         child: Container(

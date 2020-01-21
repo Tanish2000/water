@@ -19,57 +19,60 @@ class BottleListState extends State<BottleList> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: new AppBar(
-          backgroundColor: Colors.lightBlue[100],
-          title: new Text('Your Cart',style: TextStyle(fontSize: 20),),
 
-          leading: new Container(),
-        ),
-        body: ListView.builder(
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            final item = items[index];
+        body: Column(
+          children: <Widget>[
+            Container(
+              height: 500,
+              width: 400,
+              child: ListView.builder(
+                itemCount: items.length,
+                itemBuilder: (context, index) {
+                  final item = items[index];
 
-            return Dismissible(
-              key: Key(item),
-              // Provide a function that tells the app
-              // what to do after an item has been swiped away.
-              onDismissed: (direction) {
-                // Remove the item from the data source.
-                setState(() {
-                  items.removeAt(index);
-                });
+                  return Dismissible(
+                    key: Key(item),
+                    // Provide a function that tells the app
+                    // what to do after an item has been swiped away.
+                    onDismissed: (direction) {
+                      // Remove the item from the data source.
+                      setState(() {
+                        items.removeAt(index);
+                      });
 
-                // Then show a snackbar.
-                Scaffold.of(context)
-                    .showSnackBar(SnackBar(content: Text("$item Removed")));
-              },
-              // Show a red background as the item is swiped away.
-              background: Container(color: Colors.red[900]),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0,5,0,5),
+                      // Then show a snackbar.
+                      Scaffold.of(context)
+                          .showSnackBar(SnackBar(content: Text("$item Removed")));
+                    },
+                    // Show a red background as the item is swiped away.
+                    background: Container(color: Colors.red[900]),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0,2,0,2),
 
-                child: Container(
-                  color:Colors.lightBlue[50],
-                  child: ListTile(
-                      leading: Image.asset("assets/1.png"),
-                      title: Text('$item'),
-                      subtitle: Text(
-                          'Pure Your life'
+                      child: Container(
+                        color:Colors.lightBlue[50],
+                        child: ListTile(
+                            leading: Image.asset("assets/1.png"),
+                            title: Text('$item'),
+                            subtitle: Text(
+                                'Pure Your life'
+                            ),
+                            trailing:Container(
+                              height: 40,
+                              width: 40,
+                              decoration:
+                              BoxDecoration(border: Border.all(color: Colors.white)),
+
+                              child: Center(child: Text("2",style: TextStyle(fontSize: 18,color: Colors.grey),)),
+                            )
+                        ),
                       ),
-                      trailing:Container(
-                        height: 40,
-                        width: 40,
-                        decoration:
-                        BoxDecoration(border: Border.all(color: Colors.white)),
-
-                        child: Center(child: Text("2",style: TextStyle(fontSize: 18,color: Colors.grey),)),
-                      )
-                  ),
-                ),
+                    ),
+                  );
+                },
               ),
-            );
-          },
+            ),
+          ],
         ),
       ),
     );
