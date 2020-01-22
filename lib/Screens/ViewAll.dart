@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/Screens/addProduct.dart';
 
 int _n = 0;
 
@@ -34,32 +35,38 @@ class _HomePageState extends State<ViewAll> {
 
               child: Stack(
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 170,
-                      width: 200,
-                      decoration: new BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [Colors.white,Colors.blue[100], Colors.blue]),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.blue,
-                              blurRadius: 3.0,
-                            ),
-                          ],
-                          color: Colors.lightBlueAccent[200],
-                          borderRadius: new BorderRadius.only(
-                            topLeft: const Radius.circular(10.0),
-                            topRight: const Radius.circular(10.0),
-                            bottomLeft: const Radius.circular(10.0),
-                            bottomRight: const Radius.circular(10.0),
-                          )),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, new MaterialPageRoute(builder: (context) => AddProduct()));
 
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        child: Image.asset("assets/2.png"),
+                        height: 170,
+                        width: 200,
+                        decoration: new BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.topRight,
+                                end: Alignment.bottomLeft,
+                                colors: [Colors.white,Colors.blue[100], Colors.blue]),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.blue,
+                                blurRadius: 3.0,
+                              ),
+                            ],
+                            color: Colors.lightBlueAccent[200],
+                            borderRadius: new BorderRadius.only(
+                              topLeft: const Radius.circular(10.0),
+                              topRight: const Radius.circular(10.0),
+                              bottomLeft: const Radius.circular(10.0),
+                              bottomRight: const Radius.circular(10.0),
+                            )),
+
+                        child: Container(
+                          child: Image.asset("assets/2.png"),
+                        ),
                       ),
                     ),
                   ),
