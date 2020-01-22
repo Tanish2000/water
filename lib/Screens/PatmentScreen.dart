@@ -53,41 +53,41 @@ class payment extends State<PaymenScreen> {
 
     final double height = MediaQuery.of(context).size.height;
 
-    AppBar appBar = AppBar(
-      leading: IconButton(
-        icon: Icon(_backIcon()),
-        alignment: Alignment.centerLeft,
-        tooltip: 'Back',
-        onPressed: () {
-          Navigator.pop(context);
-        },
-      ),
-      title: Text(toolbarname),
-      backgroundColor: Colors.white,
-      actions: <Widget>[
-        new Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: new Container(
-            height: 150.0,
-            width: 30.0,
-            child: new GestureDetector(
-              onTap: () {
-                /*Navigator.of(context).push(
-                  new MaterialPageRoute(
-                      builder:(BuildContext context) =>
-                      new CartItemsScreen()
-                  )
-              );*/
-              },
-            ),
-          ),
-        )
-      ],
-    );
+//    AppBar appBar = AppBar(
+//      leading: IconButton(
+//        icon: Icon(_backIcon()),
+//        alignment: Alignment.centerLeft,
+//        tooltip: 'Back',
+//        onPressed: () {
+//          Navigator.pop(context);
+//        },
+//      ),
+//      title: Text(toolbarname),
+//      backgroundColor: Colors.white,
+//      actions: <Widget>[
+//        new Padding(
+//          padding: const EdgeInsets.all(10.0),
+//          child: new Container(
+//            height: 150.0,
+//            width: 30.0,
+//            child: new GestureDetector(
+//              onTap: () {
+//                /*Navigator.of(context).push(
+//                  new MaterialPageRoute(
+//                      builder:(BuildContext context) =>
+//                      new CartItemsScreen()
+//                  )
+//              );*/
+//              },
+//            ),
+//          ),
+//        )
+//      ],
+//    );
 
     return new Scaffold(
       key: _scaffoldKey,
-      appBar: appBar,
+//      appBar: appBar,
       body: new Column(
         children: <Widget>[
           Container(
@@ -123,7 +123,8 @@ class payment extends State<PaymenScreen> {
                                             ),
                                             onPressed: null)
                                       ],
-                                    )),
+                                    )
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(bottom: 8.0),

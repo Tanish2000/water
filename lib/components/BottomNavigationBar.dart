@@ -15,7 +15,7 @@ class _BottomNavigationBarState extends State<bottomNavigationBar > {
   int _selectedPage = 0;
   final _pageOptions = [
     Dashboard(),
-    BottleList(),
+    ViewAll(),
     Profile()
   ];
   @override
@@ -82,7 +82,7 @@ class _BottomNavigationBarState extends State<bottomNavigationBar > {
         icon: Icon(Icons.dashboard),title: Text("Dashboard")
       ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart),title: Text("Your Cart")
+              icon: Icon(Icons.shopping_basket),title: Text("Products")
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.person),title: Text("Profile")

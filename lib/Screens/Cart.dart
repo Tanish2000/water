@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'PatmentScreen.dart';
 
 class BottleList extends StatefulWidget {
   BottleList({Key key}) : super(key: key);
@@ -53,7 +54,9 @@ class BottleListState extends State<BottleList> {
                         color:Colors.lightBlue[50],
                         child: ListTile(
                             leading: Image.asset("assets/1.png"),
-                            title: Text('$item'),
+                            title: Text('$item'),onTap: (){
+                          Navigator.push(context, new MaterialPageRoute(builder: (context) => PaymenScreen()));
+                        },
                             subtitle: Text(
                                 'Pure Your life'
                             ),
