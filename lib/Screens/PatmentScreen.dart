@@ -37,14 +37,7 @@ class payment extends State<PaymenScreen> {
     });
   }
 
-  List<Item> itemList = <Item>[
-    Item(itemName: 'Black Grape', itemQun: 'Qty:1', itemPrice: '\₹ 100'),
-    Item(itemName: 'Tomato', itemQun: 'Qty:3', itemPrice: '\₹ 112'),
-    Item(itemName: 'Mango', itemQun: 'Qty:2', itemPrice: '\₹ 105'),
-    Item(itemName: 'Capsicum', itemQun: 'Qty:1', itemPrice: '\₹ 90'),
-    Item(itemName: 'Lemon', itemQun: 'Qty:2', itemPrice: '\₹ 70'),
-    Item(itemName: 'Apple', itemQun: 'Qty:1', itemPrice: '\₹ 50'),
-  ];
+
   String toolbarname = 'CheckOut';
 
   @override

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/Screens/Cart.dart';
 
 int _n = 0;
 
@@ -230,15 +231,19 @@ class _AddProductsState extends State<AddProducts> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          FlatButton(child: Text("ADD TO Cart +",
+          FlatButton(
+            child: Text("ADD TO Cart +",
             style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: Color(0xFF2F2F3E)
             ),
           ), color: Colors.transparent,
-            onPressed: (){},),
-          Text(r"$95",
+            onPressed: (){
+              Navigator.push(context, new MaterialPageRoute(builder: (context) => BottleList()));
+
+            },),
+          Text(r"₹ 95",
             style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.w100,
