@@ -14,6 +14,7 @@ class AddProduct extends StatelessWidget {
           primarySwatch: Colors.blue,
           fontFamily: 'Montserrat'
       ),
+
       home: AddProducts(),
     );
   }

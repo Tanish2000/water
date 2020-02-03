@@ -28,9 +28,7 @@ class _HomePageState extends State<ViewAll> {
     return Scaffold(
       body: GridView.count(
         crossAxisCount: columnCount,
-        children: List.generate(
-          7,
-              (int index) {
+        children: List.generate(7, (int index) {
             return Container(
 
               child: Stack(
