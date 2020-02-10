@@ -4,6 +4,7 @@ import 'package:water/Screens/Profile.dart';
 import 'package:water/Screens/Cart.dart';
 import 'package:water/Screens/ViewAll.dart';
 import 'package:water/Screens/T&C.dart';
+import 'package:water/Screens/favourite.dart';
 class bottomNavigationBar extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -56,6 +57,9 @@ class _BottomNavigationBarState extends State<bottomNavigationBar > {
             }),
             _createDrawerItem(icon: Icons.shopping_basket, text: 'Products',onTap: (){
               Navigator.push(context, new MaterialPageRoute(builder: (context) => ViewAll()));
+            }),
+            _createDrawerItem(icon: Icons.favorite, text: 'Favourite',onTap: (){
+              Navigator.push(context, new MaterialPageRoute(builder: (context) => favourite()));
             }),
             Divider(),
             _createDrawerItem(icon: Icons.insert_drive_file, text:           'Terms and Conditions',onTap: (){

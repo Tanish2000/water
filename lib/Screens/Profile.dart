@@ -19,11 +19,11 @@ class _ProfileState extends State<Profile> {
         ),
         Positioned(
             width: 350.0,
-            top: MediaQuery.of(context).size.height / 5,
+            top: MediaQuery.of(context).size.height / 20,
             child: Column(
               children: <Widget>[
                 Container(
-                  alignment: Alignment.center,
+                  alignment: Alignment.topCenter,
                     width: 150.0,
                     height: 150.0,
                     decoration: BoxDecoration(
@@ -149,7 +149,7 @@ class getClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     var path = new Path();
 
-    path.lineTo(0.0, size.height / 1.9);
+    path.lineTo(0.0, size.height / 3.5);
     path.lineTo(size.width + 165, 0.0);
     path.close();
     return path;
